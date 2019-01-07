@@ -1,0 +1,93 @@
+﻿@model DigitalHomeApp.Models.ApplianceMaster
+
+@{
+    ViewBag.Title = "DeleteAppliance";
+}
+
+<h2>Delete Appliance</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplianceKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplianceKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplianceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplianceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplianceDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplianceDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusOnOff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusOnOff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastStatusChanged)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastStatusChanged)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiveYN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiveYN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayStatusOnOff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayStatusOnOff)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+        <div class="col-md-10" style="visibility:hidden">
+            @Html.EditorFor(model => model.ApplianceKey, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+
+
+    }
+</div>

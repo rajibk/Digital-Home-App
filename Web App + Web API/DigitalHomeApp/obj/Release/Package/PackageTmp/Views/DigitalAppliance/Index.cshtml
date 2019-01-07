@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DigitalHomeApp.Models.ApplianceMaster>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>My Appliances</h2>
+
+<p>
+    @Html.ActionLink("Create Appliance", "CreateAppliance")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.ApplianceName)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.StatusOnOff)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastStatusChanged)
+        </th>
+        
+        <th> Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplianceName)
+        </td>
+
+        @if (item.StatusOnOff == "O")
+        {
+            <td class="switch-on">
+                @Html.ActionLink("On", "SwitchOnOff", new { AppKey = item.ApplianceKey, Status = "F" }, new { @style = "color:#FFFFFF;" })
+            </td>
+        }
+        @if (item.StatusOnOff == "F")
+        {
+            <td class="switch-off">
+                @Html.ActionLink("Off", "SwitchOnOff", new { AppKey = item.ApplianceKey, Status = "O" }, new { @style = "color:#FFFFFF;" })
+            </td>
+        }
+        <td>
+            @Html.DisplayFor(modelItem => item.LastStatusChanged)
+        </td>
+
+        <td>
+           
+
+            @Html.ActionLink("View", "Appliance", new { AppKey = item.ApplianceKey }) 
+
+
+        </td>
+    </tr>
+}
+
+</table>
