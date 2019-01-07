@@ -1,0 +1,74 @@
+﻿@model DigitalHomeApp.Models.ApplianceMaster
+
+@{
+    ViewBag.Title = "Appliance";
+}
+
+<h2>Appliance Detail</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplianceKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplianceKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplianceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplianceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplianceDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplianceDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusOnOff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayStatusOnOff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastStatusChanged)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastStatusChanged)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiveYN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiveYN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditAppliance", new { AppKey = Model.ApplianceKey }) |
+    @Html.ActionLink("Delete", "DeleteAppliance", new { AppKey = Model.ApplianceKey }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
